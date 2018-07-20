@@ -17,7 +17,7 @@ Vector2D::Vector2D(double x, double y) {
 }
 
 void Vector2D::setX(double x) {
-	this->x=x;
+	this->x=x;;
 }
 
 void Vector2D::setY(double y) {
