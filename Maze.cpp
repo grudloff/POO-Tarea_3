@@ -1,25 +1,25 @@
 #include "Maze.h"
-//using namespace std;
+
+
+using namespace std;
+
 Maze::Maze(int a, int b){
    hight=a;
    width=b;
 }
 
-Maze::Maze(){
-  cout<<"holamen";   
+Maze::Maze(ifstream &maze_in){
   string w;
   string h;
-  ifstream maze_in;      
-  maze_in.open("maze_in.pbm");
   
-  maze_in.ignore(256,'\n');// Se salta la primera línea
-  maze_in.ignore(256,'\n');// Se salta la 2da línea
+  maze_in.ignore(256,'\n');// Se salta la primera lÃ­nea
+  maze_in.ignore(256,'\n');// Se salta la 2da lÃ­nea
   
   getline(maze_in,w,' ');// Almacena width
-  int width=stoi(w,nullptr,0);// Convierte string a int
+  int width=atoi(&w[0]);// Convierte string a int
   this->width=width;
   getline(maze_in,h,'\n');// Almacena el hight
-  int hight=stoi(h,nullptr,0);// Convierte string a int
+  int hight=atoi(&h[0]);// Convierte string a int
   this->hight=hight;
   
   //Se crea la matriz booleana, llena de ceros
@@ -42,14 +42,14 @@ Maze::Maze(){
    int sz= s.size();
    for(int k=0;k<sz;k++){
       this->array[f][c]=(s[k]=='1');
-      cout<<array[f][c];
+      //cout<<array[f][c];
       c++;
       
       
       if(c>=width){
          f++;
          c=0;
-         cout<<"\n";
+         //cout<<"\n";
       }   
    }
    
@@ -70,32 +70,42 @@ bool Maze::isThere_a_wall(int x, int y){
 void Maze::rotate(){
    vector<vector<bool>>array_aux;
    
-   for(int w=0;w<(this->width);w++){
-      for(int h=0;h<(this->hight);h++){
-         array_aux[w][h]=this->array[h][(this->width)-1-w];
-      }
-   }
-   int hight_aux=hight;
-	this->hight=this->width;
-	this->width=hight_aux;
-	this->array=array_aux;
    
+    for(int j = 0; j<width; j++){//columnas  
+     vector<bool> col;
+     for(int i = 0; i<hight; i++){//filas   
+         col.push_back(array[i][width-1-j]);
+     }
+     array_aux.push_back(col);
+    }
+    int hight_aux=hight;
+    hight=width;
+    width=hight_aux;
+    array=array_aux;
+  
+    for(int j=0; j<array_aux.size();j++){//Destruye las columnas de array_aux
+      array_aux[j].clear();  
+    }
+  
+    array_aux.clear();//Destruye la fila de array_aux
+  
 }
 
-void Maze::write(){
-   ofstream out;
-   int h=this->array.size();
-   int w=this->array[0].size();
-   out.open ("maze_out.pbm");
+void Maze::write(ofstream &out){
+   int h=array.size();
+   int w=array[0].size();
    out <<"P1"<<endl;
    out << "#Created by UTFSM ELO329"<<endl;
    out << h <<" "<< w<<endl;  
    for(int i=0;i<h;i++){
       for(int j=0;j<w;j++){
-         out<<this->array[i][j];
+         out<<array[i][j];
       }
       out<<endl;
    }
    
    out.close();
+}
+
+Maze::~Maze(){
 }

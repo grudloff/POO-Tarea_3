@@ -1,13 +1,18 @@
 /*
- * Vector2D.h
- *
- *  Created on: Jun 2, 2018
- *      Author: gabrielrudloff
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
-#ifndef VECTOR2D_H_
-#define VECTOR2D_H_
+/* 
+ * File:   Vector2D.h
+ * Author: LeonardoSolisZamora
+ *
+ * Created on 21 de julio de 2018, 13:00
+ */
 
+#ifndef VECTOR2D_H
+#define VECTOR2D_H
 #include <string>
 #include <sstream>
 using namespace std;
@@ -32,4 +37,7 @@ public:
 	virtual ~Vector2D();
 };
 
-#endif /* VECTOR2D_H_ */
+
+
+#endif /* VECTOR2D_H */
+

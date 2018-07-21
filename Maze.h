@@ -1,40 +1,44 @@
 /*
- * Maze.h
- *
- *  Created on: Jul 9, 2018
- *      Author: leonardosoliszamora
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
-// https://stackoverflow.com/questions/12375591/vector-of-vectors-to-create-matrix
-// http://www.cplusplus.com/reference/vector/vector/push_back/
-// http://www.cplusplus.com/reference/ostream/basic_ostream/write/
+/* 
+ * File:   Maze.h
+ * Author: LeonardoSolisZamora
+ *
+ * Created on 21 de julio de 2018, 10:15
+ */
 
-#ifndef MAZE_H_
-#define MAZE_H_
+#ifndef MAZE_H
+#define MAZE_H
 
-#include <string>
 #include <fstream>
 #include <iostream>
 #include <vector>
-//#include "Vector2D.h"
+#include <stdlib.h> 
+#include "Vector2D.h"
 
 using namespace std;
 
 class Maze{
-   public:
       int hight;
       int width;
       vector<vector<bool>> array;
    public:
-      Maze();
+      Maze(ifstream &maze_in);
       Maze(int,int);
       bool isThere_a_wall(int x, int y);
-      //void markPoint(Vector2D p);
+      void markPoint(Vector2D p);
       void rotate();
-      void write();
-      //virtual ~Maze();
+      void write(ofstream &out);
+      virtual ~Maze();
    	
 };
 
 
-#endif /* MAZE_H_ */
+
+
+#endif /* MAZE_H */
+
