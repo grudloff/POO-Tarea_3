@@ -16,7 +16,7 @@
                    projectFiles="true">
       <itemPath>Maze.cpp</itemPath>
       <itemPath>Vector2D.cpp</itemPath>
-      <itemPath>main.cpp</itemPath>
+      <itemPath>stage2Test.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -48,7 +48,7 @@
       </item>
       <item path="Vector2D.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="stage2Test.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -79,7 +79,7 @@
       </item>
       <item path="Vector2D.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="stage2Test.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
