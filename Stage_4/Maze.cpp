@@ -1,11 +1,17 @@
 #include "Maze.h"
 
+Maze::Maze(){}
+
 Maze::Maze(ifstream &maze_in){
+    read(maze_in);
+}
+
+void Maze::read(ifstream& maze_in){
   string w;
   string h;
   
   maze_in.ignore(256,'\n');// Se salta la primera l�nea
-  maze_in.ignore(256,'\n');// Se salta la 2da l�nea
+  //maze_in.ignore(256,'\n');// Se salta la 2da l�nea
   
   getline(maze_in,w,' ');// Almacena width
   width=atoi(&w[0]);// Convierte string a int

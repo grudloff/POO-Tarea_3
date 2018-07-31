@@ -16,12 +16,12 @@ Robot::Robot(Vector2D pos, Vector2D v,double sensorRange, MyWorld* w) {
 	frontSensor = DistanceSensor(dir, sensorRange,this);
 	leftSensor = DistanceSensor(Vector2D(dir.getY(), -dir.getX()), sensorRange,this);
 	lookingForRightWall=true;
+        pilot=Pilot;
 }
 
 Vector2D Robot::getPosition() {
 	return pos;
 }
-
 void Robot::turnRight(){
 	v.turnRight();
 	rightSensor.turnRight();
@@ -34,28 +34,11 @@ void Robot::turnLeft(){
 	frontSensor.turnLeft();
 	leftSensor.turnLeft();
 }
+
 void Robot::moveDelta_t(double delta_t) {
-	if(leftSensor.senseWall()) {
-		turnRight();
-		return;
-	}
-	if(frontSensor.senseWall()) {
-		turnLeft();
-		return;
-	}
-	if(rightSensor.senseWall()) {
-		lookingForRightWall=false;
-		pos = pos+v*delta_t;
-		return;
-	}
-	if(lookingForRightWall) {
-		pos = pos+v*delta_t;
-		return;
-	}
-	turnRight();
-	lookingForRightWall=true;
-	return;
+    pilot.setCourse(delta_t);
 }
+
 string Robot::getDescription() {
 	return pos.getDescription();
 }

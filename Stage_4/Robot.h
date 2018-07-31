@@ -21,7 +21,7 @@ private:
 	Vector2D pos;
 	Vector2D v;
 	MyWorld* world;//Se utilza puntero porque hay dependencia circular (?)
-	
+	Pilot pilot;
         
         class Pilot{
         private: 

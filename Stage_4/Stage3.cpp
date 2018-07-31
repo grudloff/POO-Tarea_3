@@ -25,6 +25,7 @@ int main(int argc, char *argv[]){
 	MyWorld world;
 
 	world.setMaze(&maze);
+        
 	Vector2D position(10,20);  //Col ln 15 5 [m]
 	Vector2D velocity(0.0,1.0);     // [m/s]
 	double sensorRange = 3;

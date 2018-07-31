@@ -26,7 +26,9 @@ class Maze {
       int width;
       int hight;
    public:
+      Maze();
       Maze(ifstream&);
+      void read(ifstream&);
       bool isThere_a_wall(int, int);
       void markPoint(Vector2D);
       void rotate();
