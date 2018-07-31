@@ -21,7 +21,18 @@ private:
 	Vector2D pos;
 	Vector2D v;
 	MyWorld* world;//Se utilza puntero porque hay dependencia circular (?)
-	
+	Pilot pilot;
+        
+        class Pilot{
+        private: 
+            bool lookingForRightWall;
+        public:
+            Pilot();
+            void setCourse(double);
+            ~Pilot();
+        };
+        
+        
         class DistanceSensor{
 	private:
 		Vector2D dir;
@@ -50,7 +61,11 @@ public:
 	string toString();
 	void markRoute(Maze*);
 	virtual ~Robot();
+        /*// Para Stage4
         
+        DistanceSensor getRightSensor();
+        DistanceSensor getFrontSensor();
+        DistanceSensor getLeftSensor();*/
 };
 
 #include "MyWorld.h"

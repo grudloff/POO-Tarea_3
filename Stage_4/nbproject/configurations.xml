@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>DocumentedMaze.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>DocumentedMaze.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Maze.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Maze.h</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/MyWorld.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/MyWorld.h</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Robot.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Robot.h</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Stage3.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Vector2D.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/Vector2D.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/maze_in.pbm</itemPath>
+      <itemPath>../Tarea 3 POO/Stage_4/maze_out.pbm</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="../Tarea 3 POO/Stage_4/Maze.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Maze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/MyWorld.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/MyWorld.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Robot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Robot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Stage3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Vector2D.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Vector2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/maze_in.pbm" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/maze_out.pbm"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="DocumentedMaze.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DocumentedMaze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../Tarea 3 POO/Stage_4/Maze.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Maze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/MyWorld.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/MyWorld.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Robot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Robot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Stage3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Vector2D.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/Vector2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/maze_in.pbm" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Tarea 3 POO/Stage_4/maze_out.pbm"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="DocumentedMaze.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DocumentedMaze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
