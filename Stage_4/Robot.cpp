@@ -102,9 +102,49 @@ string Robot::DistanceSensor::toString(){
 	return aux.str();
 }
 
+Robot::Pilot::Pilot(){
+    lookingForRightWall(!rightSensor.senseWall());
+}
+
+Robot::Pilot::~Pilot(){}
+
+void Robot::Pilot::setCourse(double delta_t){
+        if(leftSensor.senseWall()) {
+                turnRight();
+                return;
+                }
+        if(frontSensor.senseWall()) {
+                turnLeft();
+                return;
+        }
+        if(rightSensor.senseWall()) {
+                lookingForRightWall=false;
+                pos = pos.plus(v.times(delta_t));  
+                return;
+        }
+        if(lookingForRightWall) {
+                pos = pos.plus(v.times(delta_t));  
+                return;
+        }
+        turnRight();
+        lookingForRightWall=true;
+        return;   
+}
 
 
 Robot::DistanceSensor::~DistanceSensor(){}
 Robot::~Robot() {}
 
+// Nuevo para Stage4
+/*
+DistanceSensor Robot::getRightSensor(){
+    return rightSensor;
+}
 
+DistanceSensor Robot::getLeftSensor(){
+    return leftSensor;
+}
+
+DistanceSensor Robot::getFrontSensor(){
+    return frontSensor;
+}*/
