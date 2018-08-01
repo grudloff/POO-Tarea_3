@@ -7,39 +7,30 @@
 #include "DocumentedMaze.h"
 
 DocumentedMaze::DocumentedMaze(ifstream& sc){
-    Maze();
-    
     string aux;
+    int valores[7];
+    int i=0;
+
+    sc.ignore(256,'\n');// Se salta la primera linea
     
-    sc.ignore(256,'\n');// Se salta la primera l�nea
-    //sc.ignore(256,'\n');// Se salta la 2da l�nea
+    getline(sc,aux,' ');//Se salta el #
+
+    //Podria hacerse esto con un for para los 7 elementos
+    //pero no se garantiza no tener espacios extra
+    aux="";
+    while(aux.empty()&&i<7){
+    	getline(sc,aux,' ');
+    	if(!aux.empty()){
+    		valores[i]=atoi(&aux[0]);
+    		aux="";
+    		i++;
+    	}
+    }
     
-    getline(sc,aux,' ');// Almacena entrada x
-    int pos_x=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,' ');// Almacena entrada y
-    int pos_y=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,' ');// Almacena direccion x
-    int dirx=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,' ');// Almacena direccion y
-    int diry=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,' ');// Almacena salida x
-    int exitx=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,' ');// Almacena salida y
-    int exity=atoi(&aux[0]);// Convierte string a int
-    
-    getline(sc, aux,'\n');// Almacena salida y
-    int r=atoi(&aux[0]);// Convierte string a int
-    
-    
-    entrance.setTo(pos_x,pos_y);
-    dir.setTo(dirx, diry);
-    exit.setTo(exitx,exity);
-    setExitRadius(r);
+    entrance.setTo(valores[1],valores[0]);
+    dir.setTo(valores[3], valores[2]);
+    exit.setTo(valores[5],valores[4]);
+    setExitRadius(valores[6]);
     
     read(sc);    
 }
@@ -75,4 +66,3 @@ Vector2D DocumentedMaze::getExit() {
 double DocumentedMaze::getExitRadius() {
    return exitRadius;
 }
-

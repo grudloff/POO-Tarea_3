@@ -6,6 +6,27 @@ Maze::Maze(ifstream &maze_in){
     read(maze_in);
 }
 
+//copy constructor
+Maze::Maze(const Maze& maze){
+	hight=maze.getHight();
+	width=maze.getWidth();
+	array = new bool*[hight];
+	for(int h=0;h<(hight);h++){
+		array[h] = new bool[width];
+		for(int w=0;w<(width);w++){
+			array[h][w]=maze.isThere_a_wall(w,h);
+		}
+	}
+}
+
+int Maze::getWidth() const{
+	return width;
+}
+
+int Maze::getHight() const{
+	return hight;
+}
+
 void Maze::read(ifstream& maze_in){
   string w;
   string h;
@@ -50,8 +71,11 @@ MACRO1:
   maze_in.close();
 }
 
-bool Maze::isThere_a_wall(int x, int y){
-   return this->array[y][x];      
+bool Maze::isThere_a_wall(int x, int y) const{
+	if(!(0<=x&&x<width)||!(0<=y&&y<hight))
+		return true;
+	else
+		return this->array[y][x];
 }
 
 

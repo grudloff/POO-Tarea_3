@@ -17,9 +17,12 @@ Vector2D::Vector2D(double x, double y) {
 }
 
 Vector2D Vector2D::getUnitary() {
-	   return (*this)*(1/(x*x+y*y));
+	   return (*this)*(1/getModule());
    }
 
+double Vector2D::getModule() {
+	   return sqrt(x*x+y*y);
+   }
 void Vector2D::setX(double x) {
 	this->x=x;
 }

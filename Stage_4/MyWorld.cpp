@@ -7,6 +7,7 @@
 
 #include "MyWorld.h"
 
+
 MyWorld::MyWorld() {
 	t=0;
 	r=NULL;
@@ -16,7 +17,7 @@ MyWorld::MyWorld() {
 void MyWorld::setRobot(Robot* r) {
 	this->r=r;
 }
-void MyWorld::setMaze(Maze* m) {
+void MyWorld::setMaze(DocumentedMaze* m) {
 	maze = m;
 }
 bool MyWorld::isThere_a_wall(int x, int y){
@@ -30,11 +31,12 @@ void MyWorld::printState(double t){
    cout << t << ",\t" << r->toString()<< endl;
 }
 
-void MyWorld::simulate (double delta_t, double endTime,Maze* route) {  // simulate time passing by
-	for (; t < endTime; t += delta_t) {
+void MyWorld::simulate (double delta_t ,Maze* route) {  // simulate time passing by
+	while (!((r->getPosition()-maze->getExit()).getModule()<maze->getExitRadius())&&(t<2000)){
+		//printState(t);  //debug
 		r->moveDelta_t(delta_t);
-		printState(t);
 		r->markRoute(route);
+		t+=delta_t;
 	}
 }
 

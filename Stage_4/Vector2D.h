@@ -10,6 +10,7 @@
 
 #include <string>
 #include <sstream>
+#include <math.h>
 using namespace std;
 
 class Vector2D {
@@ -19,6 +20,7 @@ public:
 	Vector2D();
 	Vector2D(double, double);
 	Vector2D getUnitary();
+	double getModule();
 	double getX();
 	double getY();
 	void turnLeft();

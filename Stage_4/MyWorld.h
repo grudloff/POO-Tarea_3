@@ -11,21 +11,24 @@
 #include "Robot.h"
 #include <iostream>
 #include "Maze.h"
+#include "DocumentedMaze.h"
+#include "Vector2D.h"
+
 using namespace std;
 
 class MyWorld {
 private:
 	double t;
 	Robot *r;//puntero para no necesitar inicializarlo
-	Maze *maze;//idem
+	DocumentedMaze *maze;//idem
 public:
 	MyWorld();
 	void setRobot(Robot*);
-	void setMaze(Maze*);
+	void setMaze(DocumentedMaze*);
 	bool isThere_a_wall(int,int);
 	void printStateDescription();
 	void printState(double);
-	void simulate (double, double,Maze*);
+	void simulate (double, Maze*);
 	virtual ~MyWorld();
 };
 

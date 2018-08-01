@@ -1,7 +1,7 @@
 /*
  * Robot.h
  *
- *  Created on: Jun 2, 2018
+ *  Created on: Jun 31, 2018
  *      Author: gabrielrudloff
  */
 
@@ -21,21 +21,20 @@ private:
 	Vector2D pos;
 	Vector2D v;
 	MyWorld* world;//Se utilza puntero porque hay dependencia circular (?)
-	Pilot pilot;
-        
-        class Pilot{
+	class Pilot{
         private: 
             bool lookingForRightWall;
+            Robot* r;//clase interna tiene acceso a private de su padre pero no la referencia
         public:
             Pilot();
+            Pilot(Robot*);
             void setCourse(double);
-            ~Pilot();
+           // ~Pilot();
         };
-        
-        
+        Pilot pilot;
         class DistanceSensor{
 	private:
-		Vector2D dir;
+		Vector2D dir;  
 		double range;
 		double presition;
 		Robot* r;//clase interna tiene acceso a private de su padre pero no la referencia
@@ -53,7 +52,8 @@ private:
 public:
 	Robot(Vector2D,Vector2D,double, MyWorld*);
 	Vector2D getPosition();
-        
+        Vector2D getVelocity();
+        void setPosition(double,double);
 	void turnLeft();
 	void turnRight();
 	void moveDelta_t(double);
@@ -61,11 +61,12 @@ public:
 	string toString();
 	void markRoute(Maze*);
 	virtual ~Robot();
-        /*// Para Stage4
+        // Para Stage4
         
-        DistanceSensor getRightSensor();
+        /*DistanceSensor getRightSensor();
         DistanceSensor getFrontSensor();
         DistanceSensor getLeftSensor();*/
+        
 };
 
 #include "MyWorld.h"
