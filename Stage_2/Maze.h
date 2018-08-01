@@ -25,7 +25,7 @@ using namespace std;
 class Maze{
       int hight;
       int width;
-      vector<vector<bool>> array;
+      vector<vector<bool> > array;
    public:
       Maze(ifstream &maze_in);
       Maze(int,int);

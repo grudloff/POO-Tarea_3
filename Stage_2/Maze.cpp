@@ -68,7 +68,7 @@ bool Maze::isThere_a_wall(int x, int y){
 }*/
 
 void Maze::rotate(){
-   vector<vector<bool>>array_aux;
+   vector<vector<bool> >array_aux;
    
    
     for(int j = 0; j<width; j++){//columnas  
@@ -96,7 +96,7 @@ void Maze::write(ofstream &out){
    int w=array[0].size();
    out <<"P1"<<endl;
    out << "#Created by UTFSM ELO329"<<endl;
-   out << h <<" "<< w<<endl;  
+   out << w <<" "<< h<<endl;  
    for(int i=0;i<h;i++){
       for(int j=0;j<w;j++){
          out<<array[i][j];
